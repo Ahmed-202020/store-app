@@ -1,0 +1,37 @@
+<div class="login pb-5">
+  <div class="container py-5">
+    <h2 class="h4 mb-3">Login:</h2>
+    <div class="w-75 mx-auto">
+      <div *ngIf="errorMessage" class="alert alert-danger py-1">{{errorMessage}}</div>
+      <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+        <label for="email" class="mb-2">Email:</label>
+        <input [ngClass]="{'is-valid': !loginForm.get('email')?.errors}" type="email" formControlName="email"
+          id="email" class="form-control mb-2" placeholder="Enter your email">
+        <div *ngIf="loginForm.get('email')?.errors&&loginForm.get('email')?.touched">
+          <p *ngIf="loginForm.get('email')?.getError('email')" class="alert alert-danger py-1">
+            invalid Email
+          </p>
+          <p *ngIf="loginForm.get('email')?.getError('required')" class="alert alert-danger py-1">
+            Email is required
+          </p>
+        </div>
+        <label for="password" class="mb-2">Password:</label>
+        <input [ngClass]="{'is-valid': !loginForm.get('password')?.errors}" type="password"
+          formControlName="password" id="password" class="form-control mb-2" placeholder="Enter your password">
+        <div *ngIf="loginForm.get('password')?.errors&&loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.getError('pattern')" class="alert alert-danger py-1">
+            password must start with uppercase
+          </p>
+          <p *ngIf="loginForm.get('password')?.getError('required')" class="alert alert-danger py-1">
+            password is required
+          </p>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary mt-2">
+          <span *ngIf="!isLoading">Login</span>
+          <span *ngIf="isLoading">waiting...</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+

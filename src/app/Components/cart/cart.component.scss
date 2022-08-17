@@ -1,0 +1,73 @@
+@import "../../vars";
+.cart{
+  padding: 100px 0;
+  background-color: $btn-color-1;
+  #data{
+    padding-inline: 30px ;
+    .table {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        tr {
+          img {
+            min-width: 40px;
+            max-width: 40px;
+          }
+        }
+    }
+  }
+  .empty-cart{
+    padding-inline: 50px ;
+    .shoping{
+      margin-inline: auto;
+      width: 500px ;
+      display: flex;
+      align-items: center ;
+      justify-content: space-evenly ;
+      a{
+        font-size: 20pt;
+      }
+    }
+  }
+}
+@media(max-width:575.98px){
+  .cart{
+    #data{
+      padding-inline: 15px;
+    }
+    .empty-cart{
+      .shoping{
+        width: auto;
+        span{
+          font-size: 60pt;
+        }
+        a{
+          font-size: 16pt;
+        }
+      }
+    }
+  }
+}
+@media(max-width:500px){
+  .cart{
+    .empty-cart{
+      .shoping{
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch ;
+      }
+    }
+  }
+}
+@media(max-width:360px){
+  .cart{
+    #data{
+      padding-inline: 8px;
+    }
+    .empty-cart{
+      padding: 60px 20px;
+    }
+  }
+}

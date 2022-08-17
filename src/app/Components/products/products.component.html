@@ -1,0 +1,28 @@
+<section class="products pt-3 pb-5">
+  <div class="container py-5">
+    <input type="text" [(ngModel)]="wordSearch" class="form-control mb-2" placeholder="search py name.." />
+    <div id="style"></div>
+    <div class="row justify-content-center">
+      <div *ngFor="let pro of products | search: wordSearch" class="col-lg-6 col-xl-4">
+        <div class="card py-4 my-4">
+          <a [routerLink]="['/product-details' , pro.id]" class="text-dec ">
+            <div class="card-header text-center bg-white border-0">
+              <img [src]="pro.image" class="mx-auto mb-3" alt="photo">
+            </div>
+            <div class="card-body px-4">
+              <div class="card-title">
+                <h2 class="title h4">{{pro.name | title}}</h2>
+                <h4 class="price">{{pro.price | price }}</h4>
+              </div>
+              <p class="card-text">{{pro.text}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<app-footer></app-footer>

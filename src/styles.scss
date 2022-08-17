@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/vars" ;
+@font-face {
+  font-family: tajawal;
+  src: url("./assets/fonts/Tajawal/Tajawal-Medium.ttf");
+}
+
+html{
+
+}
+body{
+  font-family: tajawal , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  overflow-x: hidden;
+  background-color: $bg-color;
+  .pointer{
+    cursor: pointer;
+  }
+  .text-dec{
+    text-decoration: none;
+  }
+  .header{
+    .carousel-indicators{
+      display:none ;
+    }
+    .carousel-inner{
+      .carousel-item {
+        position: relative;
+        .overlay{
+          position: absolute ;
+          top: 50%;
+          left: 3%;
+          width: 50% ;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          .text{
+            color: $main-color;
+            font-weight: bold;
+            font-size: 25pt;
+          }
+        }
+      }
+    }
+    .carousel-control-prev {
+      width: 25px;
+      height: 25px;
+      top: 50%;
+      right: 2%;
+      opacity: 1;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      .icon{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width:768px){
+  .header{
+    .carousel-inner{
+      .carousel-item{
+        .overlay{
+          left:5% !important;
+          .text{
+            font-size:16pt !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:500px){
+  .header{
+    .carousel-inner{
+      .carousel-item{
+        .overlay{
+          left:8% !important;
+          .text{
+            font-size:12pt!important ;
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:360px){
+  .header{
+    .carousel-inner{
+      .carousel-item{
+        .overlay{
+          .text{
+            font-size:7.5pt !important  ;
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:280px){
+  .header{
+    .carousel-inner{
+      .carousel-item{
+        .overlay{
+          .text{
+            font-size:5.5pt !important  ;
+          }
+        }
+      }
+    }
+  }
+}
+
+

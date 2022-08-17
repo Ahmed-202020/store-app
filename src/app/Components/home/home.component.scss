@@ -1,0 +1,13 @@
+@import "../../vars";
+@import "../../pro";
+@import "../../modal";
+.home{
+  background-color:$light-line ;
+  h1 {
+    color: $main-color ;
+  }
+  @extend %pro ;
+}
+.modal{
+  @extend %modal ;
+}

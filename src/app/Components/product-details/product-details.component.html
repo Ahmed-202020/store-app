@@ -1,0 +1,30 @@
+<div class="product-details py-5">
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-lg-4 d-flex justify-content-center align-items-center">
+        <img [src]="productDetails[0].image" class="w-100" alt="product">
+      </div>
+      <div class="col-lg-8 d-flex justify-content-center align-items-center align-items-lg-start flex-column">
+        <h2 class="title">{{productDetails[0].name | title}}</h2>
+        <h4 class="mt-2 mb-3 price">{{productDetails[0].price | price}}</h4>
+        <p class="text text-center text-lg-start">{{productDetails[0].text}}</p>
+        <button (click)="addToCart(productDetails[0]) ; addCount()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary mt-4 w-75">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center p-5">
+      <h3 class="title">The product has been added to your cart</h3>
+      <div class="icon"></div>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">done</button>
+    </div>
+  </div>
+</div>
+<app-footer>
+

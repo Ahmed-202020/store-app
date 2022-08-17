@@ -1,0 +1,16 @@
+%form{
+  h2{
+    color: $main-color;
+  }
+  form{
+    label{
+      color:$icon-color ;
+      font-size: 15pt ;
+    }
+  }
+  @media(max-width:280px) {
+    .w-75{
+      width: 90% !important;
+    }
+  }
+}

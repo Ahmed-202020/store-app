@@ -1,0 +1,6 @@
+@import "../../vars";
+@import "../../forms";
+
+.login {
+  @extend %form;
+}

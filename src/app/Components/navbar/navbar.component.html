@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container px-5">
+    <a class="navbar-brand" routerLink="home">
+      <img src="../../../assets/logo/Group 40925.png" class="w-100" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a *ngIf="isLogin" class = "cart ps-3" routerLink="cart">
+        <div class="custom">{{counterCart}}</div>
+        <img src="../../../assets/icons/out-of-the-cart-e-commerce-interface-symbol.svg" alt="">
+      </a>
+      <ul class="navbar-nav nav-1  me-auto mb-2c ps-5 mb-0">
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link" routerLink="products" routerLinkActive="active-link">Products</a>
+        </li>
+        <li *ngIf="isLogin"  class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active-link">About</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link">Contact</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li *ngIf="!isLogin"  class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active-link">Login</a>
+        </li>
+        <li *ngIf="!isLogin"  class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active-link">Register</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <span class="nav-link pointer" (click)="logOut()">LogOut</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

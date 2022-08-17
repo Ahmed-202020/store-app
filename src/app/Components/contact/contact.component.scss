@@ -1,0 +1,117 @@
+@import "../../vars";
+.contact{
+  background-color:$light-line ;
+  h1{
+    color: $main-color ;
+  }
+  .social{
+    background-color:$light-line ;
+    padding-block:100px  ;
+    border-radius: 5px ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    a{
+      display: inline-block;
+      width: 60px ;
+      height: 60px ;
+      line-height: 65px ;
+      text-align: center;
+      background-color: $main-color;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      transition: all 300ms ease;
+      -webkit-transition: all 300ms ease;
+      -moz-transition: all 300ms ease;
+      -ms-transition: all 300ms ease;
+      -o-transition: all 300ms ease;
+      i{
+        color: $white;
+        font-size: 18pt;
+        transition: all 300ms ease;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -ms-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+      }
+      &:hover{
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        i{
+          font-size: 20pt;
+        }
+      }
+    }
+  }
+  .form{
+    textarea{
+      padding:25px;
+      color: $main-color ;
+      font-size: 20pt ;
+      border-radius: 10px ;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      &:focus{
+        outline: none;
+        border: none ;
+      }
+    }
+    .btn{
+      font-size: 20pt;
+    }
+  }
+}
+@media(max-width:575.98px){
+  .contact{
+    .form.w-75{
+      width:90%!important ;
+    }
+  }
+}
+@media(max-width:500px) {
+  .contact{
+    .map{
+      iframe{
+        height: 250px;
+      }
+    }
+    .form{
+      textarea{
+        font-size:15pt ;
+      }
+    }
+  }
+}
+@media(max-width:280px) {
+  .contact{
+    .map{
+      iframe{
+        height: 200px;
+      }
+    }
+    .social{
+      a{
+        width: 45px ;
+        height: 45px ;
+        line-height: 50px ;
+        i{
+          font-size: 15pt ;
+        }
+      }
+    }
+    .form{
+      textarea{
+        height: 200px ;
+      }
+    }
+  }
+}

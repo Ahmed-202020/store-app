@@ -1,0 +1,10 @@
+@import "../../vars";
+@import "../../modal";
+.product-details{
+  .title , .price , .text{
+    color: $main-color ;
+  }
+}
+.modal {
+  @extend %modal;
+}

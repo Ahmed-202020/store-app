@@ -1,0 +1,11 @@
+<header class="header">
+  <ngb-carousel>
+    <ng-template *ngFor="let slider of sliders" ngbSlide>
+      <img [src]="slider.image" class="w-100" alt="photo">
+      <div class="overlay">
+        <div class="text">{{slider.text}}</div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</header>
+

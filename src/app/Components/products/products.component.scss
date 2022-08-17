@@ -1,0 +1,14 @@
+@import "../../vars";
+@import "../../pro";
+@import "../../modal";
+#style{
+  height: 30px ;
+  background-color: $main-color;
+}
+.products{
+  @extend %pro ;
+}
+
+
+
+
