@@ -2,7 +2,6 @@
   <div class="container py-5">
     <h2 class="h4 mb-3">Login:</h2>
     <div class="w-75 mx-auto">
-      <div *ngIf="errorMessage" class="alert alert-danger py-1">{{errorMessage}}</div>
       <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
         <label for="email" class="mb-2">Email:</label>
         <input [ngClass]="{'is-valid': !loginForm.get('email')?.errors}" type="email" formControlName="email"
@@ -27,8 +26,7 @@
           </p>
         </div>
         <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary mt-2">
-          <span *ngIf="!isLoading">Login</span>
-          <span *ngIf="isLoading">waiting...</span>
+          Login
         </button>
       </form>
     </div>

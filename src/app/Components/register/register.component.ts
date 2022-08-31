@@ -11,8 +11,6 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  isLoading: boolean = false;
-  errorMessage: string = "";
   constructor(private _AuthService:AuthService , private _Router:Router) { }
   ngOnInit(): void {
   }
@@ -24,19 +22,8 @@ export class RegisterComponent implements OnInit {
     age: new FormControl(null , [Validators.min(18), Validators.max(60), Validators.required])
   })
   submitRegisterForm() {
-    this.isLoading = true;
     if (this.registerForm.valid) {
-      this._AuthService.signUp(this.registerForm.value).subscribe({
-        next: res => {
-          if (res.message === "success") {
-            this.isLoading = false;
-            this._Router.navigate(['/login'])
-          } else {
-            this.isLoading = false;
-            this.errorMessage = res.message;
-          }
-        }
-      })
+      this._Router.navigate(['/login'])
     }
   }
 }

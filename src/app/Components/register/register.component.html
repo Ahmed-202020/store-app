@@ -2,7 +2,6 @@
   <div class="register pb-5">
     <h2 class="h4 mb-3">Register:</h2>
     <div class="w-75 mx-auto">
-      <div *ngIf="errorMessage" class="alert alert-danger py-1">{{errorMessage}}</div>
       <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
         <label for="first_name" class="mb-2">First Name:</label>
         <input [ngClass]="{'is-valid': !registerForm.get('first_name')?.errors}" type="text" formControlName="first_name"
@@ -72,10 +71,8 @@
             age is required
           </p>
         </div>
-
         <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary mt-2">
-          <span *ngIf="!isLoading">Register</span>
-          <span *ngIf="isLoading">waiting...</span>
+          Register
         </button>
       </form>
     </div>
